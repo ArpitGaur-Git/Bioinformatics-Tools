@@ -2,12 +2,15 @@ library(vcfR)
 library(poppr)
 library(ape)
 
-VCF_FILE <- "SWSF_Imputed.vcf"
+VCF_FILE <- "Name of Your VCF"
 
-OUT_DIR <- "GBS_NJ_Phylogeny"
+OUT_DIR <- "Out_NJ_Bootstrap"
 
+#Set required boots
 N_BOOT <- 1000
-SEED <- 2026
+
+#Set seeds
+SEED <- 1579
 
 # Maximum allowed missing genotype proportion per SNP
 MAX_SNP_MISSING <- 0.20
