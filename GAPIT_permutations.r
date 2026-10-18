@@ -6,9 +6,10 @@ library(parallel)
 # ============================================================
 
 N_PERM <- 1000
-SEED   <- 2026
+SEED   <- 13579
 
-traits <- c("E01", "E02", "E03", "Pooled")
+#List your traits
+traits <- c("Trait1", "Trait2", "Trait3", "Traitn")
 
 # Requested parallel workers
 N_CORES <- 64L
@@ -103,15 +104,15 @@ cat(
 # ============================================================
 # PHENOTYPE
 # ============================================================
-
-pheno <- as.data.frame(SWSF_BLUEs)
+#Replace with the name of your phenotypic data
+pheno <- as.data.frame(MyPheotypicData)
 
 required_columns <- c(
   "Taxa",
-  "E01",
-  "E02",
-  "E03",
-  "Pooled"
+  "Trait1",
+  "Trait2",
+  "Trait3",
+  "Traitn"
 )
 
 missing_columns <- setdiff(
@@ -126,10 +127,10 @@ if (length(missing_columns) > 0) {
   )
 }
 
-pheno$E01    <- as.numeric(pheno$E01)
-pheno$E02    <- as.numeric(pheno$E02)
-pheno$E03    <- as.numeric(pheno$E03)
-pheno$Pooled <- as.numeric(pheno$Pooled)
+pheno$E01    <- as.numeric(pheno$Trait1)
+pheno$E02    <- as.numeric(pheno$Trait2)
+pheno$E03    <- as.numeric(pheno$Trait3)
+pheno$Pooled <- as.numeric(pheno$Traitn)
 
 
 # ============================================================
@@ -150,7 +151,7 @@ run_perm <- function(
   
   trait_number <- match(
     trait,
-    c("E01", "E02", "E03", "Pooled")
+    c("Trait1", "Trait2", "Trait3", "Traitn")
   )
   
   trait_offset <- trait_number * 100000L
