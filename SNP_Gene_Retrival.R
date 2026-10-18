@@ -17,8 +17,8 @@ library(writexl)
 # 1. SETTINGS
 # ============================================================
 
-SNP_FILE <- "snp_list.xlsx"
-GFF_FILE <- "/home/t15q981/iwgsc_refseqv2.1_gene_annotation_200916/iwgsc_refseqv2.1_annotation_200916_HC.gff3"
+SNP_FILE <- "Name of Your SNP list in excel" #SNP list structure include three columns SNP, Chromsome, Position
+GFF_FILE <- "Name of Your GFF file"
 
 WINDOW <- 10001000
 
